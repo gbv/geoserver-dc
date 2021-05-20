@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<patch>
+    <target file="server.xml" />
+    <payload xpath="**/Service[@name='Catalina']">
+        <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
+               maxThreads="150" SSLEnabled="true" >
+        <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+        <SSLHostConfig>
+            <Certificate certificateKeyFile="/etc/letsencrypt/live/odysseus.gbv.de/privkey.pem"
+                         certificateFile="/etc/letsencrypt/live/odysseus.gbv.de/cert.pem"
+                         certificateChainFile="/etc/letsencrypt/live/odysseus.gbv.de/chain.pem"
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
+    </payload>
+</patch>
