@@ -32,7 +32,9 @@ and exctracting it.
 
 ## Tomcat Server Configuration
 
-
+If you want to add settings to the tomcat server configuration, you can do so in the files in the `configuration_patches` directory.
+They are used by the mostly undocumented [config injector](https://github.com/chris-jan-trapp/config-injector) that is installed during the container build stage.
+The provided files should set up HTTPS on port 8443 and allow you to define allowed origins for CORS.
 
 ## How to build?
 
