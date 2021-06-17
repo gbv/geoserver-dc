@@ -6,7 +6,7 @@ services:
       context: ./build_geoserver
     restart: unless-stopped
     volumes:
-      - geoserver_data:/opt/geoserver_data
+      - ./geoserver_data:/opt/geoserver_data
       - /etc/letsencrypt:/etc/letsencrypt
     ports:
       - "80:8080"
@@ -24,7 +24,4 @@ services:
 
 volumes:
   db_data:
-  geoserver_data:
-    - ./geoserver_data:/opt/geoserver_data/
-
 
