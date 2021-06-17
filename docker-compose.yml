@@ -9,8 +9,8 @@ services:
       - geoserver_data:/opt/geoserver_data
       - /etc/letsencrypt:/etc/letsencrypt
     ports:
-      - "8080:8080"
-      - "8443:8443"
+      - "8080:80"
+      - "8443:443"
 
   postgis:
     image: postgis/postgis:latest
