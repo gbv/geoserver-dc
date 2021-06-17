@@ -14,8 +14,6 @@ MAINTAINER Brian H Wilson "brian@wildsong.biz"
 # These should come from the parent geoserver, n'est pais?
 ENV GEOSERVER_VERSION 2.19.1
 ENV GEOSERVER_BASE_VERSION 2.19
-ENV GS_DATA_PATH ./geoserver_data/
-ENV GEOSERVER_DATA_DIR /opt/geoserver_data/
 
 ENV APACHE_COMMONS_COMPRESS_VERSION 1.20
 
@@ -80,9 +78,6 @@ RUN unzip -o /tmp/solr-plugin.zip && \
     unzip -o /tmp/ogcapi-plugin.zip
 
 WORKDIR /usr/local/tomcat
-
-
-COPY $GS_DATA_PATH $GEOSERVER_DATA_DIR
 
 WORKDIR /tmp/config
 # RUN python3 --version
