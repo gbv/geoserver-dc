@@ -102,8 +102,4 @@ WORKDIR /opt
 RUN apt remove -y curl pipenv && \
     rm -rf /tmp/* /var/cache/apt/*
 
-COPY ./startup.sh /opt/startup.sh
-
-ENTRYPOINT /opt/startup.sh
-
-
+CMD $CATALINA_HOME/bin/catalina.sh run
