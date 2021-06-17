@@ -14,6 +14,7 @@ MAINTAINER Brian H Wilson "brian@wildsong.biz"
 # These should come from the parent geoserver, n'est pais?
 ENV GEOSERVER_VERSION 2.19.1
 ENV GEOSERVER_BASE_VERSION 2.19
+ENV GEOSERVER_DATA_DIR /opt/geoserver_data
 
 ENV APACHE_COMMONS_COMPRESS_VERSION 1.20
 
