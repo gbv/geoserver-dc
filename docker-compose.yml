@@ -48,7 +48,7 @@ services:
       - nginx-proxy
 
 volumes:
-  db-data:
+  db_data:
   html:
   certs:
   vhost:
