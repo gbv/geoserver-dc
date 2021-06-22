@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<patch>
-    <target file="server.xml" xpath="Service[@name='Catalina']/Connector[@protocol='HTTP/1.1']"/>
-    <payload>
-        <attributes>
-            <attribute key="redirectPort" value="8443"/>
-        </attributes>
-    </payload>
-</patch>
