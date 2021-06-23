@@ -33,6 +33,7 @@ services:
     volumes:
       - ./nginx_conf/nginx.conf:/etc/nginx/nginx.conf
       - webroot:/var/www/letsencrypt
+      - certs:/etc/letsencrypt/live
     env_file:
       - .env
     depends_on:
@@ -46,10 +47,12 @@ services:
       - nginx-proxy
     volumes:
       - webroot:/var/www/letsencrypt
+      - certs:/etc/letsencrypt/live
 
-    command: certbot certonly -a webroot --webroot-path=/var/www/letsencrypt -m christian.trapp@gbv.de --agree-tos -d geodienste.gbv.de
+    command: certbot certonly -a webroot --non-interactive --force-renewal --webroot-path=/var/www/letsencrypt -m christian.trapp@gbv.de --agree-tos -d geodienste.gbv.de
 
 
 volumes:
   db_data:
   webroot:
+  certs:
