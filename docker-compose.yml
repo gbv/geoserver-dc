@@ -24,7 +24,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
 
-  nginx-proxy:
+  proxy:
     container_name: proxy
     image: nginx
     ports:
@@ -43,13 +43,11 @@ services:
     container_name: certbot
     build:
       context: ./build_certbot
-    depends_on:
-      - nginx-proxy
     volumes:
       - webroot:/var/www/letsencrypt
       - certs:/etc/letsencrypt/live
 
-    command: certbot certonly -a webroot --non-interactive --force-renewal --webroot-path=/var/www/letsencrypt -m christian.trapp@gbv.de --agree-tos -d geodienste.gbv.de
+    # command: certbot certonly -a webroot --non-interactive --force-renewal --webroot-path=/var/www/letsencrypt -m christian.trapp@gbv.de --agree-tos -d geodienste.gbv.de
 
 
 volumes:
