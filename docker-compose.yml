@@ -8,6 +8,9 @@ services:
     volumes:
       - ./geoserver_data:/geoserver
       - /etc/letsencrypt:/etc/letsencrypt
+    depends_on:
+      - nginx-proxy
+      - postgis
 
   postgis:
     image: postgis/postgis:latest
@@ -32,8 +35,6 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     labels:
       - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
-    depends_on:
-      - geoserver
 
   letsencrypt:
     restart: unless-stopped
