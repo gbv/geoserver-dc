@@ -38,6 +38,8 @@ services:
   letsencrypt:
     restart: unless-stopped
     container_name: letsencrypt
+    env_file:
+      - .env
     image: jrcs/letsencrypt-nginx-proxy-companion
     volumes:
       - vhost:/etc/nginx/vhost.d

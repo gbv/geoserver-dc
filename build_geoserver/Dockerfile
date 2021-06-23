@@ -96,5 +96,5 @@ WORKDIR /opt
 # cleanup
 RUN apt remove -y curl pipenv && \
     rm -rf /tmp/* /var/cache/apt/*
-
+EXPOSE 8080
 CMD $CATALINA_HOME/bin/catalina.sh run
