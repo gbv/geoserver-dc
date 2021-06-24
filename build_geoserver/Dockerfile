@@ -90,7 +90,7 @@ RUN pipenv run python inject.py
 RUN pipenv --rm
 
 WORKDIR $CATALINA_HOME/conf
-COPY ./configuration_override/* .
+COPY ./configuration_override/server.xml .
 
 RUN mv /usr/local/tomcat/webapps/geoserver /usr/local/tomcat/webapps/nld
 
