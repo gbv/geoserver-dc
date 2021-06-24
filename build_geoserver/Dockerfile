@@ -77,8 +77,6 @@ RUN unzip -o /tmp/ogr-wfs-plugin.zip && \
 RUN unzip -o /tmp/solr-plugin.zip && \
     unzip -o /tmp/ogcapi-plugin.zip
 
-WORKDIR /usr/local/tomcat
-
 WORKDIR /tmp/config
 # RUN python3 --version
 RUN git clone https://github.com/chris-jan-trapp/config-injector.git
@@ -90,6 +88,11 @@ RUN ls /tmp/config/config-injector/patches
 COPY patcher_env /tmp/config/config-injector/.env
 RUN pipenv run python inject.py
 RUN pipenv --rm
+
+WORKDIR $CATALINA_HOME/conf
+COPY ./configuration_override/* .
+
+RUN mv /usr/local/tomcat/webapps/geoserver /usr/local/tomcat/webapps/nld
 
 WORKDIR /opt
 
