@@ -15,7 +15,7 @@ MAINTAINER Brian H Wilson "brian@wildsong.biz"
 ENV GEOSERVER_VERSION 2.19.1
 ENV GEOSERVER_BASE_VERSION 2.19
 
-ENV APACHE_COMMONS_COMPRESS_VERSION 1.20
+ENV APACHE_COMMONS_COMPRESS_VERSION 1.21
 
 # Install GDAL so that the ogr-* plugins will work
 RUN apt-get update && apt-get -y install gdal-bin pipenv
