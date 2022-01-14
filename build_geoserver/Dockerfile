@@ -1,19 +1,9 @@
-FROM wildsong/geoserver:2.19.1
-MAINTAINER Brian H Wilson "brian@wildsong.biz"
+FROM trappgbv/geoserver:latest
 
-#1 Update wildsong/docker-geoserver in github
-#2 Follow the README instructions there to manually build a new release
-#3 Update version numbers in this file, esp the one in the FROM line above
-#4 run "docker-compose down"
-#5 run "docker-compose up"
-#6 test
-#7 git commit
-#8 git tag ???
-#9 git push
 
 # These should come from the parent geoserver, n'est pais?
-ENV GEOSERVER_VERSION 2.19.1
-ENV GEOSERVER_BASE_VERSION 2.19
+ENV GEOSERVER_VERSION 2.20.1
+ENV GEOSERVER_BASE_VERSION 2.20
 
 ENV APACHE_COMMONS_COMPRESS_VERSION 1.21
 
